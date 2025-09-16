@@ -1,4 +1,3 @@
-# wisdom-realty-site
 # Wisdom Realty Website
 
 A project showcase and lead generation website for **Wisdom Realty**.
