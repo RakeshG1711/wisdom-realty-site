@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wisdom Realty — Projects</title>
+  <meta name="description" content="Wisdom Realty — Project showcase & lead capture" />
+  <style>
+    :root{--accent:#0b6efd;--muted:#666;--bg:#f7f8fb}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0;background:var(--bg);color:#111}
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    header{background:white;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6ea8fe);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:16px;text-decoration:none;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px}
+    .hero-card{background:white;border-radius:12px;padding:26px;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
+    .hero h1{margin:0;font-size:26px}
+    .muted{color:var(--muted);margin-top:8px}
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+    .outline{background:transparent;color:var(--accent);border:1px solid #dbe6ff}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+    .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
+    .card img{width:100%;height:160px;object-fit:cover}
+    .card-body{padding:12px}
+    .tag{display:inline-block;background:#eef5ff;color:var(--accent);padding:6px 8px;border-radius:6px;font-size:13px}
+    footer{margin:30px 0;text-align:center;color:var(--muted)}
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:flex;align-items:center;justify-content:center;padding:20px}
+    .modal{width:720px;max-width:100%;background:white;border-radius:10px;padding:18px}
+    .row{display:flex;gap:10px}
+    .col{flex:1}
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefb;font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">WR</div>
+        <div>
+          <div style="font-weight:700">Wisdom Realty</div>
+          <div class="small">Crafting homes with trust & quality</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-card">
+        <h1>Featured Project: <span id="featured-title">Serene Meadows</span></h1>
+        <div class="muted" id="featured-desc">Premium 2 & 3 BHK apartments with modern amenities. Located near the city center with easy connectivity.</div>
+        <div class="cta">
+          <button class="btn" id="book-visit">Book Site Visit</button>
+          <button class="btn outline" id="download-brochure">Download Brochure</button>
+          <a class="btn" href="https://wa.me/919999999999?text=I'm%20interested%20in%20Serene%20Meadows" target="_blank">WhatsApp</a>
+        </div>
+
+        <section style="margin-top:18px">
+          <h3 style="margin:0 0 10px 0">Why choose us</h3>
+          <ul class="small">
+            <li>Transparent pricing & RERA-registered projects</li>
+            <li>Quality construction with on-time delivery</li>
+            <li>Dedicated customer support & site visits</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <div class="hero-card">
+          <h4 style="margin-top:0">Quick Lead</h4>
+          <form id="quick-lead-form">
+            <label>Name</label>
+            <input name="name" required />
+            <label>Phone</label>
+            <input name="phone" required />
+            <label>Email</label>
+            <input name="email" type="email" />
+            <div style="margin-top:10px">
+              <button class="btn" type="submit">Send Enquiry</button>
+            </div>
+            <div id="quick-lead-msg" class="small" style="margin-top:8px"></div>
+          </form>
+        </div>
+
+        <div class="hero-card" style="margin-top:12px">
+          <h4 style="margin-top:0">Contact</h4>
+          <div class="small">Office: 90909 90909</div>
+          <div class="small">Email: info@wisdomrealty.example</div>
+          <div style="margin-top:8px"><a href="#contact">View on map</a></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="projects" style="margin-top:18px">
+      <h2 style="margin:0 0 10px 0">Our Projects</h2>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section id="gallery" style="margin-top:24px">
+      <h2 style="margin:0 0 10px 0">Gallery</h2>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
+        <img src="https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
+        <img src="https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:24px">
+      <h2 style="margin:0 0 10px 0">Contact & Location</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+        <div class="hero-card">
+          <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+            <label>Your name</label>
+            <input name="name" required />
+            <label>Phone</label>
+            <input name="phone" required />
+            <label>Email</label>
+            <input name="email" type="email" />
+            <label>Message</label>
+            <textarea name="message" rows="4"></textarea>
+            <div style="margin-top:10px"><button class="btn" type="submit">Send Message</button></div>
+            <div class="small" style="margin-top:8px">(Form uses Formspree — replace <code>yourformid</code> with your endpoint.)</div>
+          </form>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h4 style="margin-top:0">Office Location</h4>
+            <div class="small">123 Realty Street, Your City</div>
+            <div style="margin-top:10px">
+              <!-- replace src with your Google Maps embed -->
+              <iframe width="100%" height="220" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.01993666541!2d144.96154331531677!3d-37.81627997975101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f1a1fb%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1596185467892!5m2!1sen!2sin" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © Wisdom Realty • Built with care • Replace demo content with your project data
+    </footer>
+  </div>
+
+  <!-- Modal placeholders -->
+  <div id="modal-root"></div>
+
+  <script>
+    // Demo project data — replace with your real projects
+    const projects = [
+      {id:1,title:'Serene Meadows',type:'Ongoing',location:'Sector 12',desc:'2 & 3 BHK, Garden-facing, Clubhouse, Possession: Dec 2026',img:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&crop=faces'},
+      {id:2,title:'Oak Residency',type:'Completed',location:'Lakeview',desc:'3 BHK premium apartments. Completed 2023',img:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&crop=faces'},
+      {id:3,title:'Horizon Heights',type:'Upcoming',location:'Hilltop',desc:'Luxury villas — Register interest',img:'https://images.unsplash.com/photo-1572120360610-d971b9b4b14d?q=80&w=1200&auto=format&fit=crop&crop=faces'}
+    ];
+
+    function el(q){return document.querySelector(q)}
+    function renderProjects(){
+      const grid = el('#project-grid'); grid.innerHTML='';
+      projects.forEach(p=>{
+        const div = document.createElement('div'); div.className='card';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" />
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>${p.title}</strong><span class="tag">${p.type}</span></div>
+            <div class="small" style="margin-top:8px">${p.location}</div>
+            <p class="small" style="margin-top:8px">${p.desc}</p>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="btn" onclick="openProject(${p.id})">View</button>
+              <button class="btn outline" onclick="openRegister(${p.id})">Register Interest</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+      })
+    }
+
+    function openProject(id){
+      const p = projects.find(x=>x.id===id);
+      showModal(`
+        <div style=\"display:flex;gap:14px;\"> 
+          <img src=\"${p.img}\" style=\"width:280px;height:200px;object-fit:cover;border-radius:8px\" />
+          <div style=\"flex:1\"> 
+            <h3 style=\"margin:0\">${p.title}</h3>
+            <div class=\"small\">${p.location} • ${p.type}</div>
+            <p class=\"small\" style=\"margin-top:8px\">${p.desc}</p>
+            <h4 style=\"margin:6px 0 8px 0\">Amenities</h4>
+            <ul class=\"small\"><li>Clubhouse</li><li>Park</li><li>24/7 security</li></ul>
+            <div style=\"margin-top:12px;display:flex;gap:8px\"> <button class=\"btn\" onclick=\"openRegister(${p.id})\">Register Interest</button> <a class=\"btn outline\" href=\"#\" onclick=\"downloadBrochure(event,'${p.title}')\">Download Brochure</a> </div>
+          </div>
+        </div>
+      `)
+    }
+
+    function openRegister(id){
+      const p = projects.find(x=>x.id===id);
+      showModal(`
+        <div>
+          <h3 style=\"margin:0 0 10px 0\">Register Interest - ${p.title}</h3>
+          <form id=\"register-form\"> 
+            <label>Name</label>
+            <input name=\"name\" required />
+            <label>Phone</label>
+            <input name=\"phone\" required />
+            <label>Email</label>
+            <input name=\"email\" type=\"email\" />
+            <label>Message (optional)</label>
+            <textarea name=\"message\"></textarea>
+            <div style=\"margin-top:10px\"><button class=\"btn\" type=\"submit\">Submit</button> <button class=\"btn outline\" type=\"button\" onclick=\"closeModal()\">Close</button></div>
+            <div id=\"register-msg\" class=\"small\" style=\"margin-top:8px\"></div>
+          </form>
+        </div>
+      `)
+
+      document.getElementById('register-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        // demo: collect values
+        const fd = new FormData(e.target);
+        const data = Object.fromEntries(fd.entries());
+        document.getElementById('register-msg').textContent = 'Thanks! We received your interest. We will contact you soon.';
+        // TODO: POST to your CRM or Formspree endpoint using fetch() here
+        setTimeout(closeModal,1600);
+      })
+    }
+
+    function downloadBrochure(ev,title){
+      ev.preventDefault();
+      // show lead capture before download
+      showModal(`
+        <div>
+          <h3 style=\"margin:0 0 10px 0\">Download Brochure - ${title}</h3>
+          <form id=\"download-form\"> 
+            <label>Name</label>
+            <input name=\"name\" required />
+            <label>Email</label>
+            <input name=\"email\" type=\"email\" />
+            <label>Phone</label>
+            <input name=\"phone\" />
+            <div style=\"margin-top:10px\"><button class=\"btn\">Download</button> <button class=\"btn outline\" type=\"button\" onclick=\"closeModal()\">Cancel</button></div>
+            <div id=\"dl-msg\" class=\"small\" style=\"margin-top:8px\"></div>
+          </form>
+        </div>
+      `)
+      document.getElementById('download-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        // in production, submit lead to your CRM then redirect to PDF
+        document.getElementById('dl-msg').textContent = 'Preparing brochure...';
+        setTimeout(()=>{
+          // replace the URL below with your real brochure file path
+          window.open('brochures/sample-brochure.pdf','_blank');
+          closeModal();
+        },900);
+      })
+    }
+
+    // modal helpers
+    function showModal(html){
+      const root = document.getElementById('modal-root');
+      root.innerHTML = `<div class=\"modal-backdrop\"> <div class=\"modal\"> <div style=\"text-align:right\"><button onclick=\"closeModal()\" class=\"outline\">Close</button></div> ${html} </div></div>`;
+    }
+    function closeModal(){document.getElementById('modal-root').innerHTML=''}
+
+    // Quick lead submission (demo only)
+    document.getElementById('quick-lead-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data = Object.fromEntries(fd.entries());
+      document.getElementById('quick-lead-msg').textContent = 'Thanks — we will contact you shortly.';
+      // In production, send data to server/CRM here using fetch()
+      e.target.reset();
+    })
+
+    // hero buttons
+    document.getElementById('book-visit').addEventListener('click', ()=> openRegister(1))
+    document.getElementById('download-brochure').addEventListener('click', (e)=> downloadBrochure(e, 'Serene Meadows'))
+
+    // initial render
+    renderProjects();
+  </script>
+</body>
+</html>
+
