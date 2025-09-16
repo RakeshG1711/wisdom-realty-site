@@ -3,287 +3,533 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Wisdom Realty — Projects</title>
-  <meta name="description" content="Wisdom Realty — Project showcase & lead capture" />
+  <title>Wisdom Realty — Elegant Projects</title>
+  <meta name="description" content="Wisdom Realty — luxury project showcase & lead capture" />
+  <meta name="author" content="Wisdom Realty" />
+  <!-- Elegant font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root{--accent:#0b6efd;--muted:#666;--bg:#f7f8fb}
+    /* -------------------------
+       Theme: Luxury (off-white + gold + charcoal)
+       Single-file CSS for easy deployment
+       ------------------------- */
+    :root{
+      --bg:#fbfaf8;           /* off-white */
+      --card:#ffffff;
+      --muted:#6b6b6b;
+      --accent:#b8860b;       /* gold */
+      --accent-2:#f0c971;
+      --dark:#141414;
+      --radius:14px;
+      --max-width:1200px;
+      --section-pad:56px;
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0;background:var(--bg);color:#111}
-    .container{max-width:1100px;margin:28px auto;padding:0 20px}
-    header{background:white;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6ea8fe);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    nav a{margin-left:16px;text-decoration:none;color:var(--muted)}
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px}
-    .hero-card{background:white;border-radius:12px;padding:26px;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
-    .hero h1{margin:0;font-size:26px}
-    .muted{color:var(--muted);margin-top:8px}
-    .cta{display:flex;gap:12px;margin-top:16px}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
-    .outline{background:transparent;color:var(--accent);border:1px solid #dbe6ff}
-    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
-    .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(12,20,40,0.06)}
-    .card img{width:100%;height:160px;object-fit:cover}
-    .card-body{padding:12px}
-    .tag{display:inline-block;background:#eef5ff;color:var(--accent);padding:6px 8px;border-radius:6px;font-size:13px}
-    footer{margin:30px 0;text-align:center;color:var(--muted)}
-    /* modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:flex;align-items:center;justify-content:center;padding:20px}
-    .modal{width:720px;max-width:100%;background:white;border-radius:10px;padding:18px}
-    .row{display:flex;gap:10px}
-    .col{flex:1}
-    label{display:block;font-size:13px;margin-bottom:6px}
-    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefb;font-size:14px}
-    .small{font-size:13px;color:var(--muted)}
-    /* responsive */
-    @media (max-width:900px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background:var(--bg);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:0 20px}
+
+    /* HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .badge{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:"Playfair Display",serif;
+      box-shadow:0 8px 30px rgba(16,16,16,0.08)
+    }
+    .brand h1{margin:0;font-family:"Playfair Display",serif;font-size:20px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta-top{display:flex;gap:10px}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
+      background:var(--dark);color:white;text-decoration:none;
+    }
+    .btn.ghost{background:transparent;color:var(--dark);border:1px solid rgba(20,20,20,0.06)}
+
+    /* HERO */
+    .hero{
+      margin-top:22px;
+      background-image: url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1600&auto=format&fit=crop&crop=faces");
+      background-size:cover;
+      background-position:center;
+      border-radius:18px;
+      min-height:420px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(20,20,20,0.18), rgba(20,20,20,0.12));
+    }
+    .hero-inner{position:relative;z-index:2;display:flex;gap:28px;align-items:center;justify-content:space-between;padding:48px;min-height:420px}
+    .hero-left{max-width:720px;color:var(--bg)}
+    .hero-left h2{font-family:"Playfair Display",serif;font-size:42px;margin:0 0 8px 0;color:white}
+    .hero-left p{margin:0 0 18px 0;color:rgba(255,255,255,0.9);font-size:16px}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+      padding:18px;border-radius:14px;min-width:320px;box-shadow:0 10px 30px rgba(16,16,16,0.06)
+    }
+    .hero-card h4{margin:0 0 6px 0}
+    .hero-card .small{color:var(--muted);font-size:13px}
+
+    /* SECTIONS */
+    section{padding:var(--section-pad) 0}
+    h2.section-title{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 10px 0}
+    p.lead{color:var(--muted);margin:6px 0 20px 0}
+
+    /* PROJECT GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:18px}
+    .proj{
+      background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 14px 40px rgba(16,16,16,0.06);cursor:pointer;
+      display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease;
+    }
+    .proj:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(16,16,16,0.1)}
+    .proj .thumb{height:180px;background-size:cover;background-position:center}
+    .proj .pbody{padding:14px;flex:1;display:flex;flex-direction:column}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .meta .title{font-weight:700;font-size:16px}
+    .meta .tag{background:#fff7e1;color:#8a5a05;padding:6px 8px;border-radius:8px;font-size:13px;border:1px solid rgba(138,90,5,0.06)}
+    .desc{color:var(--muted);font-size:14px;margin-top:10px;flex:1}
+    .pfoot{display:flex;gap:10px;margin-top:12px;align-items:center}
+
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+    .testi{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 26px rgba(16,16,16,0.04)}
+    .testi .quote{font-style:italic;color:var(--muted);font-size:15px}
+    .testi .who{margin-top:10px;font-weight:700}
+
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    .contact-card{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:12px;box-shadow:0 14px 40px rgba(16,16,16,0.06)}
+    .form-row{display:flex;gap:8px}
+    .form-row input{flex:1}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;padding:12px;border-radius:8px;border:1px solid rgba(20,20,20,0.06);font-size:14px
+    }
+    textarea{resize:vertical}
+
+    /* FOOTER */
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px;padding:18px 0}
+
+    /* MODAL / LIGHTBOX */
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(8,8,8,0.55);display:flex;align-items:center;justify-content:center;padding:18px;z-index:9999;
+    }
+    .modal{
+      width:980px;max-width:100%;background:var(--bg);border-radius:14px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.6);
+      display:flex;gap:0;max-height:90vh;
+    }
+    .modal-left{width:55%;background:#f8f6f4;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+    .modal-left .big{height:360px;background-size:cover;background-position:center;border-radius:8px}
+    .thumbs{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+    .thumbs img{width:80px;height:60px;object-fit:cover;border-radius:6px;border:2px solid transparent;cursor:pointer}
+    .thumbs img.active{border-color:var(--accent)}
+
+    .modal-right{width:45%;padding:22px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+    .modal-right h3{margin:0;font-family:"Playfair Display",serif}
+    .modal-right .small{color:var(--muted);font-size:14px}
+    .amenities{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .amenities .a{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid rgba(20,20,20,0.04);font-size:13px;color:var(--muted)}
+
+    .modal-right form{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+    .modal-right form input, .modal-right form textarea{padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06)}
+    .modal-actions{display:flex;gap:8px;margin-top:10px;align-items:center}
+
+    .close-x{position:absolute;right:16px;top:12px;background:transparent;border:0;font-size:18px;cursor:pointer;color:var(--muted)}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .hero-inner{flex-direction:column;align-items:flex-start;padding:28px}
+      .modal{flex-direction:column;max-height:95vh}
+      .modal-left,.modal-right{width:100%}
+      .modal-left .big{height:260px}
+      .contact-wrap{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
+    <!-- Header -->
     <header>
       <div class="brand">
-        <div class="logo">WR</div>
+        <div class="badge">WR</div>
         <div>
-          <div style="font-weight:700">Wisdom Realty</div>
-          <div class="small">Crafting homes with trust & quality</div>
+          <h1>Wisdom Realty</h1>
+          <div style="color:var(--muted);font-size:13px">Luxury homes • Honest deals</div>
         </div>
       </div>
+
       <nav>
         <a href="#projects">Projects</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <div class="cta-top">
+        <a class="btn" href="tel:+917774056745">Call</a>
+        <a class="btn ghost" href="#contact">Enquire</a>
+      </div>
     </header>
 
-    <div class="hero">
-      <div class="hero-card">
-        <h1>Featured Project: <span id="featured-title">Godrej Seren</span></h1>
-        <div class="muted" id="featured-desc">Premium 2 & 3 BHK apartments with modern amenities. Located near the city center with easy connectivity.</div>
-        <div class="cta">
-          <button class="btn" id="book-visit">Book Site Visit</button>
-          <button class="btn outline" id="download-brochure">Download Brochure</button>
-          <a class="btn" href="https://wa.me/917774056745?text=I'm%20interested%20in%20Serene%20Meadows" target="_blank">WhatsApp</a>
+    <!-- HERO -->
+    <section class="hero" aria-label="Featured project">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h2>Crafting elegant living spaces for families who value design & trust.</h2>
+          <p class="lead">Premium residential projects, transparent pricing and on-time delivery. Explore our curated projects and request a site visit.</p>
+          <div style="display:flex;gap:12px">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Book a Visit</a>
+          </div>
         </div>
 
-        <section style="margin-top:18px">
-          <h3 style="margin:0 0 10px 0">Why choose us</h3>
-          <ul class="small">
-            <li>Transparent pricing & RERA-registered projects</li>
-            <li>Quality construction with on-time delivery</li>
-            <li>Dedicated customer support & site visits</li>
-          </ul>
-        </section>
+        <aside class="hero-card" aria-label="Quick contact">
+          <h4>Quick Contact</h4>
+          <div class="small">Fill the form and our sales will reach you within 24 hours.</div>
+          <form id="hero-contact" style="margin-top:12px">
+            <input name="name" type="text" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06)">
+            <input name="phone" type="text" placeholder="Phone" required style="padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06);margin-top:8px">
+            <button class="btn" type="submit" style="margin-top:8px">Request Call</button>
+            <div id="hero-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </aside>
       </div>
+    </section>
 
-      <aside>
-        <div class="hero-card">
-          <h4 style="margin-top:0">Quick Lead</h4>
-          <form id="quick-lead-form">
-            <label>Name</label>
-            <input name="name" required />
-            <label>Phone</label>
-            <input name="phone" required />
-            <label>Email</label>
-            <input name="email" type="email" />
-            <div style="margin-top:10px">
-              <button class="btn" type="submit">Send Enquiry</button>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="lead">Handpicked projects showcasing design, location and value.</p>
+
+      <div class="grid" id="projectGrid">
+        <!-- project cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2 class="section-title">What clients say</h2>
+      <p class="lead">Real buyers. Real experiences.</p>
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="quote">"Wisdom Realty made the entire process effortless. On-time delivery and exceptional quality."</div>
+          <div class="who">— Ramesh K., Buyer</div>
+        </div>
+        <div class="testi">
+          <div class="quote">"Professional team, transparent pricing. Highly recommended."</div>
+          <div class="who">— Priya S., Homeowner</div>
+        </div>
+        <div class="testi">
+          <div class="quote">"Beautiful finishes and great location — excellent value."</div>
+          <div class="who">— Amit D., Investor</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact & Office</h2>
+      <p class="lead">Have questions or want a site visit? Reach out — phone, WhatsApp or the form below.</p>
+
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
+            <div style="display:flex;gap:8px">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="text" name="phone" placeholder="Phone" required>
             </div>
-            <div id="quick-lead-msg" class="small" style="margin-top:8px"></div>
+            <input type="email" name="email" placeholder="Email" style="margin-top:8px">
+            <textarea name="message" placeholder="Message (optional)" rows="5" style="margin-top:8px"></textarea>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="btn" type="submit">Send Message</button>
+              <a class="btn ghost" href="https://wa.me/917774056745" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <div id="contact-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
           </form>
         </div>
 
-        <div class="hero-card" style="margin-top:12px">
-          <h4 style="margin-top:0">Contact</h4>
-          <div class="small">Office: 7774056745</div>
-          <div class="small">Email: wisdomreality.in@gmail.com</div>
-          <div style="margin-top:8px"><a href="#contact">View on map</a></div>
-        </div>
-      </aside>
-    </div>
-
-    <section id="projects" style="margin-top:18px">
-      <h2 style="margin:0 0 10px 0">Our Projects</h2>
-      <div class="project-grid" id="project-grid"></div>
-    </section>
-
-    <section id="gallery" style="margin-top:24px">
-      <h2 style="margin:0 0 10px 0">Gallery</h2>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
-        <img src="https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
-        <img src="https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=800&auto=format&fit=crop&crop=faces" style="width:240px;height:140px;object-fit:cover;border-radius:10px"/>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:24px">
-      <h2 style="margin:0 0 10px 0">Contact & Location</h2>
-      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
-        <div class="hero-card">
-          <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
-            <label>Your name</label>
-            <input name="name" required />
-            <label>Phone</label>
-            <input name="phone" required />
-            <label>Email</label>
-            <input name="email" type="email" />
-            <label>Message</label>
-            <textarea name="message" rows="4"></textarea>
-            <div style="margin-top:10px"><button class="btn" type="submit">Send Message</button></div>
-            <div class="small" style="margin-top:8px">(Form uses Formspree — replace <code>yourformid</code> with your endpoint.)</div>
-          </form>
-        </div>
-        <div>
-          <div class="hero-card">
-            <h4 style="margin-top:0">Office Location</h4>
-            <div class="small">123 Realty Street, Your City</div>
-            <div style="margin-top:10px">
-              <!-- replace src with your Google Maps embed -->
-              <iframe width="100%" height="220" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.01993666541!2d144.96154331531677!3d-37.81627997975101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f1a1fb%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1596185467892!5m2!1sen!2sin" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="contact-card" aria-hidden="false">
+          <h4 style="margin:0">Office</h4>
+          <div class="small" style="margin-top:8px">Wisdom Realty, 123 Realty Lane, Your City</div>
+          <div style="margin-top:12px">
+            <!-- Replace with your Google Maps iframe -->
+            <iframe width="100%" height="220" frameborder="0" style="border:0;border-radius:8px"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.01993666541!2d144.96154331531677!3d-37.81627997975101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f1a1fb%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1596185467892!5m2!1sen!2sin"
+              allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <a class="btn" href="tel:+917774056745">Call</a>
+            <a class="btn ghost" href="mailto:wisdomreality.in@gmail.com">Email</a>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      © Wisdom Realty • Built with care • Replace demo content with your project data
+      © Wisdom Realty — Elegant homes, trustworthy service.
     </footer>
   </div>
 
-  <!-- Modal placeholders -->
-  <div id="modal-root"></div>
+  <!-- Modal root (injected dynamically) -->
+  <div id="modalRoot" aria-hidden="true"></div>
 
+  <!-- Single-file JS -->
   <script>
-    // project data —site in process
-    const projects = [
-      {id:1,title:'Godrej Seren',type:'Ongoing',location:'Sector 12',desc:'2 & 3 BHK, Garden-facing, Clubhouse, Possession: Dec 2026',img:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&crop=faces'},
-      {id:2,title:'Gera's Joy On The TreeTops',type:'Completed',location:'Mountain View',desc:'2,3,5 BHK premium apartments. Possession 2028',img:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&crop=faces'},
-      {id:3,title:'Kohinoor Central Park',type:'Upcoming',location:'Hilltop',desc:'Luxury villas — Register interest',img:'https://images.unsplash.com/photo-1572120360610-d971b9b4b14d?q=80&w=1200&auto=format&fit=crop&crop=faces'}
+    /* -------------------------
+       Dummy projects data (edit later)
+       Replace image & brochure paths with your own files in assets/
+       ------------------------- */
+    const PROJECTS = [
+      {
+        id: 1,
+        title: "Godrej Seren",
+        location: "Sector 12, New City",
+        tag: "Ongoing",
+        desc: "Luxurious 2 & 3 BHK apartments with landscaped gardens and world-class amenities.",
+        images: [
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1400&auto=format&fit=crop&crop=faces",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop&crop=faces",
+          "https://images.unsplash.com/photo-1598300101797-12f2f3c1b6b9?q=80&w=1400&auto=format&fit=crop&crop=faces"
+        ],
+        brochure: "https://example.com/sample-brochure.pdf",
+        amenities: ["Clubhouse", "Jogging Track", "Children's Play Area", "24/7 Security"],
+        possession: "Dec 2026"
+      },
+      {
+        id: 2,
+        title: "Gera's Joy on The Treetops",
+        location: "Mountain View",
+        tag: "Completed",
+        desc: "Modern apartments with panoramic views — crafted for serene living.",
+        images: [
+          "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
+          "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
+        ],
+        brochure: "https://example.com/sample-brochure.pdf",
+        amenities: ["Sky Lounge", "Gym", "Private Parking"],
+        possession: "Ready to occupy"
+      },
+      {
+        id: 3,
+        title: "Kohinoor Central Park",
+        location: "Hilltop",
+        tag: "Upcoming",
+        desc: "Premium villas with private gardens and premium fittings.",
+        images: [
+          "https://images.unsplash.com/photo-1572120360610-d971b9b4b14d?q=80&w=1400&auto=format&fit=crop&crop=faces"
+        ],
+        brochure: "https://example.com/sample-brochure.pdf",
+        amenities: ["Private Garden", "High Security"],
+        possession: "Launching Soon"
+      }
     ];
 
-    function el(q){return document.querySelector(q)}
+    /* Utility: create an element with optional classes */
+    function $el(tag, cls){ const e = document.createElement(tag); if(cls) e.className = cls; return e; }
+
+    /* Render project cards */
+    const projectGrid = document.getElementById('projectGrid');
     function renderProjects(){
-      const grid = el('#project-grid'); grid.innerHTML='';
-      projects.forEach(p=>{
-        const div = document.createElement('div'); div.className='card';
-        div.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" />
-          <div class="card-body">
-            <div style="display:flex;justify-content:space-between;align-items:center"><strong>${p.title}</strong><span class="tag">${p.type}</span></div>
-            <div class="small" style="margin-top:8px">${p.location}</div>
-            <p class="small" style="margin-top:8px">${p.desc}</p>
-            <div style="margin-top:10px;display:flex;gap:8px">
-              <button class="btn" onclick="openProject(${p.id})">View</button>
-              <button class="btn outline" onclick="openRegister(${p.id})">Register Interest</button>
+      projectGrid.innerHTML = '';
+      PROJECTS.forEach(p=>{
+        const card = $el('div','proj');
+        const thumb = $el('div','thumb');
+        thumb.style.backgroundImage = `url('${p.images[0]}')`;
+        card.appendChild(thumb);
+
+        const body = $el('div','pbody');
+        const meta = $el('div','meta');
+        const title = $el('div','title'); title.textContent = p.title;
+        const tag = $el('div','tag'); tag.textContent = p.tag;
+        meta.appendChild(title); meta.appendChild(tag);
+
+        const desc = $el('div','desc'); desc.textContent = p.desc;
+        const foot = $el('div','pfoot');
+        const viewBtn = $el('button','btn'); viewBtn.textContent = 'View';
+        viewBtn.addEventListener('click', ()=> openProjectModal(p.id));
+        const regBtn = $el('button','btn ghost'); regBtn.textContent = 'Register';
+        regBtn.addEventListener('click', ()=> openRegisterModal(p.id));
+        const brochureA = $el('a'); brochureA.className='btn';
+        brochureA.style.textDecoration='none'; brochureA.textContent='Brochure';
+        brochureA.href = p.brochure;
+        brochureA.target = '_blank'; brochureA.rel = 'noopener noreferrer';
+
+        foot.appendChild(viewBtn); foot.appendChild(regBtn); foot.appendChild(brochureA);
+
+        body.appendChild(meta); body.appendChild(desc); body.appendChild(foot);
+        card.appendChild(body);
+        projectGrid.appendChild(card);
+      });
+    }
+
+    /* Modal creation */
+    const modalRoot = document.getElementById('modalRoot');
+    function showModal(innerHtml){
+      modalRoot.setAttribute('aria-hidden','false');
+      modalRoot.innerHTML = '';
+      const backdrop = $el('div','modal-backdrop');
+      backdrop.innerHTML = innerHtml;
+      modalRoot.appendChild(backdrop);
+      // click outside closes
+      backdrop.addEventListener('click', (ev)=>{
+        if(ev.target === backdrop) closeModal();
+      });
+      // ESC to close
+      document.addEventListener('keydown', escClose);
+    }
+    function closeModal(){
+      modalRoot.innerHTML = '';
+      modalRoot.setAttribute('aria-hidden','true');
+      document.removeEventListener('keydown', escClose);
+    }
+    function escClose(e){ if(e.key === 'Escape') closeModal(); }
+
+    /* Open project modal (gallery + details + enquiry) */
+    function openProjectModal(id){
+      const p = PROJECTS.find(x=>x.id===id);
+      if(!p) return;
+      // left column: big image + thumbs
+      const big = p.images[0] || '';
+      const thumbsHtml = p.images.map((src,idx)=>`<img src="${src}" data-index="${idx}" alt="thumb-${idx}" loading="lazy">`).join('');
+      const html = `
+        <div class="modal" role="dialog" aria-modal="true" aria-label="${p.title}">
+          <button class="close-x" onclick="closeModal()" aria-label="Close">✕</button>
+          <div class="modal-left">
+            <div class="big" id="modalBig" style="background-image:url('${big}')"></div>
+            <div class="thumbs" id="modalThumbs">${thumbsHtml}</div>
+          </div>
+          <div class="modal-right">
+            <h3>${p.title}</h3>
+            <div class="small">${p.location} • ${p.possession}</div>
+            <p style="margin-top:8px;color:var(--muted)">${p.desc}</p>
+
+            <div style="margin-top:6px">
+              <strong>Amenities</strong>
+              <div class="amenities">${p.amenities.map(a=>`<div class="a">${a}</div>`).join('')}</div>
+            </div>
+
+            <div class="modal-actions">
+              <a class="btn" href="${p.brochure}" target="_blank" rel="noopener noreferrer">Download Brochure (PDF)</a>
+              <button class="btn ghost" onclick="openRegisterModal(${p.id})">Enquire</button>
+            </div>
+
+            <div style="margin-top:12px">
+              <strong>Request a callback</strong>
+              <form id="modal-enquiry" style="margin-top:8px">
+                <input name="name" type="text" placeholder="Your name" required>
+                <input name="phone" type="text" placeholder="Phone" required style="margin-top:8px">
+                <input name="email" type="email" placeholder="Email (optional)" style="margin-top:8px">
+                <textarea name="message" rows="3" placeholder="Message (optional)" style="margin-top:8px"></textarea>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                  <button class="btn" type="submit">Send Enquiry</button>
+                  <button class="btn ghost" type="button" onclick="closeModal()">Close</button>
+                </div>
+                <div id="modal-enq-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+              </form>
             </div>
           </div>
-        `;
-        grid.appendChild(div);
-      })
+        </div>
+      `;
+      showModal(html);
+
+      // wire up thumbs and form after DOM inserted
+      const thumbs = modalRoot.querySelectorAll('.thumbs img');
+      const modalBig = modalRoot.querySelector('#modalBig');
+      thumbs.forEach(img=>{
+        img.addEventListener('click', ()=> {
+          modalBig.style.backgroundImage = `url('${img.src}')`;
+          thumbs.forEach(t=>t.classList.remove('active'));
+          img.classList.add('active');
+        });
+      });
+      if(thumbs[0]) thumbs[0].classList.add('active');
+
+      const modalForm = modalRoot.querySelector('#modal-enquiry');
+      modalForm.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        const fd = new FormData(modalForm);
+        // demo behaviour: show message and reset — integrate with CRM / Formspree here
+        modalRoot.querySelector('#modal-enq-msg').textContent = 'Thanks — we received your enquiry. We will contact you shortly.';
+        modalForm.reset();
+        setTimeout(()=>{ closeModal(); }, 1600);
+      });
     }
 
-    function openProject(id){
-      const p = projects.find(x=>x.id===id);
-      showModal(`
-        <div style=\"display:flex;gap:14px;\"> 
-          <img src=\"${p.img}\" style=\"width:280px;height:200px;object-fit:cover;border-radius:8px\" />
-          <div style=\"flex:1\"> 
-            <h3 style=\"margin:0\">${p.title}</h3>
-            <div class=\"small\">${p.location} • ${p.type}</div>
-            <p class=\"small\" style=\"margin-top:8px\">${p.desc}</p>
-            <h4 style=\"margin:6px 0 8px 0\">Amenities</h4>
-            <ul class=\"small\"><li>Clubhouse</li><li>Park</li><li>24/7 security</li></ul>
-            <div style=\"margin-top:12px;display:flex;gap:8px\"> <button class=\"btn\" onclick=\"openRegister(${p.id})\">Register Interest</button> <a class=\"btn outline\" href=\"#\" onclick=\"downloadBrochure(event,'${p.title}')\">Download Brochure</a> </div>
+    /* Register modal (simple form) */
+    function openRegisterModal(id){
+      const p = PROJECTS.find(x=>x.id===id);
+      const html = `
+        <div class="modal" role="dialog" aria-modal="true" aria-label="Register Interest">
+          <button class="close-x" onclick="closeModal()" aria-label="Close">✕</button>
+          <div style="padding:20px;max-height:80vh;overflow:auto">
+            <h3>Register interest — ${p ? p.title : ''}</h3>
+            <p class="small">${p ? p.location : ''}</p>
+            <form id="reg-form" style="margin-top:12px">
+              <input name="name" type="text" placeholder="Your name" required>
+              <input name="phone" type="text" placeholder="Phone" required style="margin-top:8px">
+              <input name="email" type="email" placeholder="Email (optional)" style="margin-top:8px">
+              <textarea name="message" rows="4" placeholder="Message (optional)" style="margin-top:8px"></textarea>
+              <div style="display:flex;gap:8px;margin-top:10px">
+                <button class="btn" type="submit">Submit</button>
+                <button class="btn ghost" type="button" onclick="closeModal()">Cancel</button>
+              </div>
+              <div id="reg-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+            </form>
           </div>
         </div>
-      `)
+      `;
+      showModal(html);
+      const f = modalRoot.querySelector('#reg-form');
+      f.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        // TODO: send to CRM / API
+        modalRoot.querySelector('#reg-msg').textContent = 'Thanks — we will contact you soon.';
+        f.reset();
+        setTimeout(closeModal,1400);
+      });
     }
 
-    function openRegister(id){
-      const p = projects.find(x=>x.id===id);
-      showModal(`
-        <div>
-          <h3 style=\"margin:0 0 10px 0\">Register Interest - ${p.title}</h3>
-          <form id=\"register-form\"> 
-            <label>Name</label>
-            <input name=\"name\" required />
-            <label>Phone</label>
-            <input name=\"phone\" required />
-            <label>Email</label>
-            <input name=\"email\" type=\"email\" />
-            <label>Message (optional)</label>
-            <textarea name=\"message\"></textarea>
-            <div style=\"margin-top:10px\"><button class=\"btn\" type=\"submit\">Submit</button> <button class=\"btn outline\" type=\"button\" onclick=\"closeModal()\">Close</button></div>
-            <div id=\"register-msg\" class=\"small\" style=\"margin-top:8px\"></div>
-          </form>
-        </div>
-      `)
-
-      document.getElementById('register-form').addEventListener('submit', function(e){
-        e.preventDefault();
-        // demo: collect values
-        const fd = new FormData(e.target);
-        const data = Object.fromEntries(fd.entries());
-        document.getElementById('register-msg').textContent = 'Thanks! We received your interest. We will contact you soon.';
-        // TODO: POST to your CRM or Formspree endpoint using fetch() here
-        setTimeout(closeModal,1600);
-      })
-    }
-
-    function downloadBrochure(ev,title){
+    /* HERO quick contact handler (demo only) */
+    document.getElementById('hero-contact').addEventListener('submit', function(ev){
       ev.preventDefault();
-      // show lead capture before download
-      showModal(`
-        <div>
-          <h3 style=\"margin:0 0 10px 0\">Download Brochure - ${title}</h3>
-          <form id=\"download-form\"> 
-            <label>Name</label>
-            <input name=\"name\" required />
-            <label>Email</label>
-            <input name=\"email\" type=\"email\" />
-            <label>Phone</label>
-            <input name=\"phone\" />
-            <div style=\"margin-top:10px\"><button class=\"btn\">Download</button> <button class=\"btn outline\" type=\"button\" onclick=\"closeModal()\">Cancel</button></div>
-            <div id=\"dl-msg\" class=\"small\" style=\"margin-top:8px\"></div>
-          </form>
-        </div>
-      `)
-      document.getElementById('download-form').addEventListener('submit', function(e){
-        e.preventDefault();
-        // in production, submit lead to your CRM then redirect to PDF
-        document.getElementById('dl-msg').textContent = 'Preparing brochure...';
-        setTimeout(()=>{
-          // replace the URL below with your real brochure file path
-          window.open('brochures/sample-brochure.pdf','_blank');
-          closeModal();
-        },900);
-      })
-    }
+      document.getElementById('hero-msg').textContent = 'Thanks — our team will call you shortly.';
+      this.reset();
+    });
 
-    // modal helpers
-    function showModal(html){
-      const root = document.getElementById('modal-root');
-      root.innerHTML = `<div class=\"modal-backdrop\"> <div class=\"modal\"> <div style=\"text-align:right\"><button onclick=\"closeModal()\" class=\"outline\">Close</button></div> ${html} </div></div>`;
-    }
-    function closeModal(){document.getElementById('modal-root').innerHTML=''}
+    /* CONTACT form handler (demo only) */
+    document.getElementById('contactForm').addEventListener('submit', function(ev){
+      ev.preventDefault();
+      document.getElementById('contact-msg').textContent = 'Thanks — message sent.';
+      this.reset();
+    });
 
-    // Quick lead submission (demo only)
-    document.getElementById('quick-lead-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      const data = Object.fromEntries(fd.entries());
-      document.getElementById('quick-lead-msg').textContent = 'Thanks — we will contact you shortly.';
-      // In production, send data to server/CRM here using fetch()
-      e.target.reset();
-    })
-
-    // hero buttons
-    document.getElementById('book-visit').addEventListener('click', ()=> openRegister(1))
-    document.getElementById('download-brochure').addEventListener('click', (e)=> downloadBrochure(e, 'Godrej Serene'))
-
-    // initial render
+    /* Initialize */
     renderProjects();
+
+    /* Accessibility: close modal on Escape */
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
+
+    /* Notes for you (remove in production):
+       - Replace PROJECTS images & brochure URLs with your files in assets/images & assets/pdfs
+       - Replace demo form behaviour with fetch() calls to Formspree / Google Sheets / your CRM
+       - Optimize images (webp/jpg) and add alt texts for SEO
+       - To use a custom domain, configure GitHub Pages & DNS (A + CNAME as needed)
+    */
   </script>
 </body>
 </html>
-
