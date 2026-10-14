@@ -1,650 +1,875 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>RG Lifespaces — Elegant Projects</title>
-<meta name="description" content="RG Lifespaces — luxury project showcase & lead capture" />
-<meta name="author" content="RG Lifespaces" />
-<meta property="og:title" content="RG Lifespaces — Elegant Projects" />
-<meta property="og:description" content="Luxury homes • Honest deals. Premium residential projects in Khed, Pune with transparent pricing and on-time delivery." />
-<meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b8860b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E" />
-<!-- Elegant font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-/* -------------------------
-   Theme: Luxury (off-white + gold + charcoal)
-   Single-file CSS for easy deployment
-------------------------- */
-:root{
-  --bg:#fbfaf8; /* off-white */
-  --card:#ffffff;
-  --muted:#6b6b6b;
-  --accent:#b8860b; /* gold */
-  --accent-2:#f0c971;
-  --dark:#141414;
-  --radius:14px;
-  --max-width:1200px;
-  --section-pad:56px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-  background:var(--bg);
-  color:var(--dark);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-}
-.wrap{max-width:var(--max-width);margin:28px auto;padding:0 20px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RG Lifespaces — Elegant Projects</title>
+  <meta name="description" content="RG Lifespaces — residential project showcase and lead capture in Pune. Explore featured homes and upcoming launches.">
+  <meta name="author" content="RG Lifespaces">
+  <meta property="og:title" content="RG Lifespaces — Elegant Projects">
+  <meta property="og:description" content="Luxury homes • Honest deals. Explore residential projects and upcoming launches in Pune.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b8860b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative}
-.brand{display:flex;gap:12px;align-items:center}
-.badge{
-  width:64px;height:64px;border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:"Playfair Display",serif;
-  box-shadow:0 8px 30px rgba(16,16,16,0.08)
-}
-.brand h1{margin:0;font-family:"Playfair Display",serif;font-size:20px}
-nav{display:flex;gap:18px;align-items:center}
-nav a{color:var(--muted);text-decoration:none;font-weight:600}
-.cta-top{display:flex;gap:10px;align-items:center}
-.btn{
-  display:inline-block;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
-  background:var(--dark);color:white;text-decoration:none;
-}
-.btn.ghost{background:transparent;color:var(--dark);border:1px solid rgba(20,20,20,0.06)}
-.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;}
-.menu-toggle span{display:block;width:24px;height:2px;background:var(--dark);margin:5px 0;}
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --card: #fff;
+      --muted: #6b6b6b;
+      --accent: #b8860b;
+      --accent-2: #f0c971;
+      --dark: #141414;
+      --radius: 14px;
+      --max-width: 1200px;
+      --section-pad: 56px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    .wrap { max-width: var(--max-width); margin: 28px auto; padding: 0 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; position: relative; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .brand-badge {
+      width: 64px; height: 64px; flex: 0 0 64px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex; align-items: center; justify-content: center; color: white;
+      font-weight: 700; font-family: "Playfair Display", serif; font-size: 23px;
+      box-shadow: 0 8px 30px rgba(16,16,16,.08);
+    }
+    .brand h1 { margin: 0; font-family: "Playfair Display", serif; font-size: 20px; }
+    .brand-tagline { color: var(--muted); font-size: 13px; }
+    nav { display: flex; gap: 18px; align-items: center; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; }
+    nav a:hover { color: var(--accent); }
+    .cta-top { display: flex; gap: 10px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 10px 14px; border-radius: 10px; border: 1px solid transparent;
+      cursor: pointer; font-weight: 600; font-size: 14px;
+      background: var(--dark); color: white; text-decoration: none; transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: .92; }
+    .btn.ghost { background: transparent; color: var(--dark); border-color: rgba(20,20,20,.15); }
+    .btn.gold { background: var(--accent); color: white; }
+    .menu-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+    .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; }
 
-/* HERO */
-.hero{
-  margin-top:22px;
-  background-image: url("https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1600&auto=format&fit=crop&crop=faces");
-  background-size:cover;
-  background-position:center;
-  border-radius:18px;
-  min-height:420px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::after{
-  content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(20,20,20,0.18), rgba(20,20,20,0.12));
-}
-.hero-inner{position:relative;z-index:2;display:flex;gap:28px;align-items:center;justify-content:space-between;padding:48px;min-height:420px}
-.hero-left{max-width:720px;color:var(--bg)}
-.hero-left h2{font-family:"Playfair Display",serif;font-size:42px;margin:0 0 8px 0;color:dark cream}
-.hero-left p{margin:0 0 18px 0;color:rgba(255,255,255,0.9);font-size:16px}
-.hero-card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
-  padding:18px;border-radius:14px;min-width:320px;box-shadow:0 10px 30px rgba(16,16,16,0.06)
-}
-.hero-card h4{margin:0 0 6px 0}
-.hero-card .small{color:var(--muted);font-size:13px}
+    .hero {
+      margin-top: 22px;
+      background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1800&auto=format&fit=crop");
+      background-size: cover; background-position: center; border-radius: 18px;
+      min-height: 430px; position: relative; overflow: hidden;
+    }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,12,12,.75), rgba(12,12,12,.22)); }
+    .hero-inner {
+      position: relative; z-index: 2; display: flex; gap: 28px; align-items: center;
+      justify-content: space-between; padding: 42px; min-height: 430px;
+    }
+    .hero-left { max-width: 680px; color: white; }
+    .hero-left h2 { font-family: "Playfair Display", serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; margin: 0 0 12px; color: #fff; }
+    .hero-left p { margin: 0 0 20px; color: rgba(255,255,255,.92); font-size: 16px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions .btn.ghost { color: white; border-color: rgba(255,255,255,.5); }
+    .hero-card {
+      background: rgba(255,255,255,.97); padding: 20px; border-radius: 14px;
+      min-width: 290px; width: 320px; box-shadow: 0 10px 30px rgba(16,16,16,.16);
+    }
+    .hero-card h3 { margin: 0 0 5px; font-size: 18px; }
+    .small { color: var(--muted); font-size: 13px; }
+    .field { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(20,20,20,.16); background: #fff; color: var(--dark); }
+    .field:focus { outline: 2px solid rgba(184,134,11,.25); border-color: var(--accent); }
+    .form-stack { display: flex; flex-direction: column; gap: 9px; margin-top: 12px; }
+    .form-status { min-height: 18px; margin-top: 8px; color: var(--muted); font-size: 13px; }
 
-/* SECTIONS */
-section{padding:var(--section-pad) 0}
-h2.section-title{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 10px 0}
-p.lead{color:var(--muted);margin:6px 0 20px 0}
+    section { padding: var(--section-pad) 0; scroll-margin-top: 20px; }
+    .section-title { font-family: "Playfair Display", serif; font-size: 30px; line-height: 1.2; margin: 0 0 10px; }
+    .lead { color: var(--muted); margin: 6px 0 20px; max-width: 800px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 18px; }
+    .proj {
+      background: var(--card); border-radius: 12px; overflow: hidden;
+      box-shadow: 0 14px 40px rgba(16,16,16,.06); display: flex; flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease; min-width: 0;
+    }
+    .proj:hover { transform: translateY(-5px); box-shadow: 0 22px 50px rgba(16,16,16,.11); }
+    .thumb { height: 190px; background-size: cover; background-position: center; background-color: #e9e4dc; }
+    .pbody { padding: 15px; flex: 1; display: flex; flex-direction: column; }
+    .meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .meta .title { font-weight: 700; font-size: 16px; line-height: 1.35; }
+    .tag { flex-shrink: 0; background: #fff7e1; color: #8a5a05; padding: 5px 8px; border-radius: 8px; font-size: 12px; border: 1px solid rgba(138,90,5,.12); }
+    .desc { color: var(--muted); font-size: 14px; margin-top: 10px; flex: 1; }
+    .possession-line { font-size: 12.5px; color: var(--accent); font-weight: 700; margin-top: 10px; }
+    .pfoot { display: flex; gap: 8px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+    .pfoot .btn { padding: 9px 10px; font-size: 12px; }
+    .section-note { margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--accent); background: #fff; color: var(--muted); border-radius: 0 8px 8px 0; font-size: 13px; }
 
-/* PROJECT GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:18px}
-.proj{
-  background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 14px 40px rgba(16,16,16,0.06);cursor:pointer;
-  display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease;
-}
-.proj:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(16,16,16,0.1)}
-.proj .thumb{height:180px;background-size:cover;background-position:center}
-.proj .pbody{padding:14px;flex:1;display:flex;flex-direction:column}
-.meta{display:flex;justify-content:space-between;align-items:center}
-.meta .title{font-weight:700;font-size:16px}
-.meta .tag{background:#fff7e1;color:#8a5a05;padding:6px 8px;border-radius:8px;font-size:13px;border:1px solid rgba(138,90,5,0.06)}
-.desc{color:var(--muted);font-size:14px;margin-top:10px;flex:1}
-.possession-line{font-size:12.5px;color:var(--accent);font-weight:600;margin-top:8px}
-.pfoot{display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap}
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 18px; }
+    .testi { background: var(--card); padding: 18px; border-radius: 12px; box-shadow: 0 8px 26px rgba(16,16,16,.04); }
+    .testi .quote { font-style: italic; color: var(--muted); font-size: 15px; }
+    .testi .who { margin-top: 10px; font-weight: 700; font-size: 14px; }
 
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
-.testi{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 26px rgba(16,16,16,0.04)}
-.testi .quote{font-style:italic;color:var(--muted);font-size:15px}
-.testi .who{margin-top:10px;font-weight:700}
+    .contact-wrap { display: grid; grid-template-columns: 1fr 360px; gap: 22px; }
+    .contact-card { background: linear-gradient(180deg,#fff,#fffaf7); padding: 20px; border-radius: 12px; box-shadow: 0 14px 40px rgba(16,16,16,.06); min-width: 0; }
+    .form-row { display: flex; gap: 8px; }
+    .form-row > * { flex: 1; min-width: 0; }
+    textarea.field { resize: vertical; }
+    .office-title { margin: 0; font-size: 18px; }
+    .map-frame { width: 100%; height: 220px; border: 0; border-radius: 8px; margin-top: 12px; }
+    footer { margin-top: 18px; text-align: center; color: var(--muted); font-size: 13px; padding: 20px 0; border-top: 1px solid rgba(20,20,20,.08); }
 
-/* CONTACT */
-.contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:22px}
-.contact-card{background:linear-gradient(180deg,#fff,#fffaf7);padding:18px;border-radius:12px;box-shadow:0 14px 40px rgba(16,16,16,0.06)}
-.form-row{display:flex;gap:8px}
-.form-row input{flex:1}
-input[type="text"], input[type="email"], textarea{
-  width:100%;padding:12px;border-radius:8px;border:1px solid rgba(20,20,20,0.06);font-size:14px
-}
-textarea{resize:vertical}
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(8,8,8,.62); display: flex;
+      align-items: center; justify-content: center; padding: 18px; z-index: 9999;
+    }
+    .modal {
+      width: 980px; max-width: 100%; background: var(--bg); border-radius: 14px;
+      overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,.6); display: flex;
+      max-height: 92vh; position: relative;
+    }
+    .modal-left { width: 52%; background: #f8f6f4; padding: 12px; display: flex; flex-direction: column; gap: 8px; overflow: auto; }
+    .modal-left .big { height: 340px; background-size: cover; background-position: center; border-radius: 8px; background-color: #e9e4dc; }
+    .thumbs { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+    .thumbs img { width: 76px; height: 58px; object-fit: cover; border-radius: 6px; border: 2px solid transparent; cursor: pointer; }
+    .thumbs img.active { border-color: var(--accent); }
+    .modal-right { width: 48%; padding: 24px; display: flex; flex-direction: column; gap: 12px; overflow: auto; }
+    .modal-right h3 { margin: 0; padding-right: 28px; font-family: "Playfair Display", serif; font-size: 24px; }
+    .modal-right .small { color: var(--muted); font-size: 14px; }
+    .amenities { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .amenities .a { background: #fff; border-radius: 8px; padding: 8px 10px; border: 1px solid rgba(20,20,20,.07); font-size: 12px; color: var(--muted); }
+    .modal-right form { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+    .modal-actions { display: flex; gap: 8px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+    .close-x { position: absolute; right: 14px; top: 10px; background: #fff; border: 0; border-radius: 50%; width: 34px; height: 34px; font-size: 20px; cursor: pointer; color: var(--muted); z-index: 2; }
+    .wa-float {
+      position: fixed; right: 20px; bottom: 20px; z-index: 500; width: 58px; height: 58px;
+      border-radius: 50%; background: #25D366; display: flex; align-items: center;
+      justify-content: center; box-shadow: 0 10px 26px rgba(0,0,0,.25); transition: transform .2s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
 
-/* FOOTER */
-footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px;padding:18px 0}
-
-/* MODAL / LIGHTBOX */
-.modal-backdrop{
-  position:fixed;inset:0;background:rgba(8,8,8,0.55);display:flex;align-items:center;justify-content:center;padding:18px;z-index:9999;
-}
-.modal{
-  width:980px;max-width:100%;background:var(--bg);border-radius:14px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.6);
-  display:flex;gap:0;max-height:90vh;position:relative;
-}
-.modal-left{width:55%;background:#f8f6f4;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:auto}
-.modal-left .big{height:360px;background-size:cover;background-position:center;border-radius:8px}
-.thumbs{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
-.thumbs img{width:80px;height:60px;object-fit:cover;border-radius:6px;border:2px solid transparent;cursor:pointer}
-.thumbs img.active{border-color:var(--accent)}
-.modal-right{width:45%;padding:22px;display:flex;flex-direction:column;gap:12px;overflow:auto}
-.modal-right h3{margin:0;font-family:"Playfair Display",serif}
-.modal-right .small{color:var(--muted);font-size:14px}
-.amenities{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.amenities .a{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid rgba(20,20,20,0.04);font-size:13px;color:var(--muted)}
-.modal-right form{display:flex;flex-direction:column;gap:8px;margin-top:6px}
-.modal-right form input, .modal-right form textarea{padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06)}
-.modal-actions{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap}
-.close-x{position:absolute;right:16px;top:12px;background:transparent;border:0;font-size:18px;cursor:pointer;color:var(--muted);z-index:2}
-
-/* FLOATING WHATSAPP */
-.wa-float{
-  position:fixed;right:20px;bottom:20px;z-index:500;
-  width:58px;height:58px;border-radius:50%;background:#25D366;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,0.25);
-  transition:transform .2s ease;
-}
-.wa-float:hover{transform:scale(1.08)}
-
-/* RESPONSIVE */
-@media (max-width:980px){
-  .hero-inner{flex-direction:column;align-items:flex-start;padding:28px}
-  .modal{flex-direction:column;max-height:95vh}
-  .modal-left,.modal-right{width:100%}
-  .modal-left .big{height:260px}
-  .contact-wrap{grid-template-columns:1fr}
-}
-@media (max-width:820px){
-  .menu-toggle{display:block}
-  nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--card);flex-direction:column;align-items:flex-start;padding:16px 20px;border-radius:12px;box-shadow:0 14px 40px rgba(16,16,16,0.1);gap:14px;z-index:400}
-  nav.open{display:flex}
-}
-</style>
+    @media (max-width: 980px) {
+      .hero-inner { flex-direction: column; align-items: flex-start; padding: 28px; }
+      .hero-card { width: 100%; max-width: 420px; }
+      .modal { flex-direction: column; max-height: 95vh; overflow: auto; }
+      .modal-left, .modal-right { width: 100%; overflow: visible; }
+      .modal-left .big { height: 250px; }
+      .contact-wrap { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      .wrap { margin-top: 16px; }
+      .menu-toggle { display: block; }
+      nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--card); flex-direction: column; align-items: flex-start; padding: 16px 20px; border-radius: 12px; box-shadow: 0 14px 40px rgba(16,16,16,.1); gap: 14px; z-index: 400; }
+      nav.open { display: flex; }
+      .cta-top .btn { padding: 9px 10px; }
+      .brand-badge { width: 52px; height: 52px; flex-basis: 52px; }
+      .brand h1 { font-size: 18px; }
+    }
+    @media (max-width: 540px) {
+      .wrap { padding: 0 14px; }
+      header { gap: 8px; }
+      .brand { gap: 8px; }
+      .brand-tagline { font-size: 11px; }
+      .cta-top { gap: 6px; }
+      .cta-top .btn { font-size: 12px; padding: 8px; }
+      .hero-inner { padding: 22px; }
+      .hero { min-height: auto; }
+      .hero-inner { min-height: auto; }
+      section { padding: 42px 0; }
+      .section-title { font-size: 27px; }
+      .form-row { flex-direction: column; }
+      .modal-backdrop { padding: 8px; }
+      .modal-right { padding: 18px; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-
-  <!-- Header -->
-  <header>
-    <div class="brand">
-      <div class="badge">RG</div>
-      <div>
-        <h1>RG Lifespaces</h1>
-        <div style="color:var(--muted);font-size:13px">Luxury homes • Honest deals</div>
-      </div>
-    </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <nav id="mainNav">
-      <a href="#projects">Projects</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="cta-top">
-      <a class="btn" href="tel:+917774056745">Call</a>
-      <a class="btn ghost" href="#contact">Enquire</a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" aria-label="Featured project">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <h2>Crafting elegant living spaces for families who value design &amp; trust.</h2>
-        <p class="lead">Premium residential projects, transparent pricing and on-time delivery. Explore our curated projects and request a site visit.</p>
-        <div style="display:flex;gap:12px">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn ghost" href="#contact">Book a Visit</a>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">RG</div>
+        <div>
+          <h1>RG Lifespaces</h1>
+          <div class="brand-tagline">Luxury homes • Honest deals</div>
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Quick contact">
-        <h4>Quick Contact</h4>
-        <div class="small">Fill the form and our sales will reach you within 24 hours.</div>
-        <form id="hero-contact" action="https://formsubmit.co/rglifespaces@gmail.com" method="POST" style="margin-top:12px">
-          <input type="hidden" name="_subject" value="New Quick Contact enquiry — RG Lifespaces">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input name="name" type="text" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06)">
-          <input name="phone" type="text" placeholder="Phone" required style="padding:10px;border-radius:8px;border:1px solid rgba(20,20,20,0.06);margin-top:8px">
-          <button class="btn" type="submit" style="margin-top:8px">Request Call</button>
-          <div id="hero-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
-        </form>
-      </aside>
-    </div>
-  </section>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="lead">Handpicked projects showcasing design, location and value.</p>
-    <div class="grid" id="projectGrid">
-      <!-- project cards inserted by JS -->
-    </div>
-  </section>
-     <!-- PROJECTS -->
-  <section id="projects">
-    <h2 class="section-title">Upcoming Projects</h2>
-    <p class="lead">Projects showcasing design, location and value.</p>
-    <div class="grid" id="projectGrid">
-      <!-- project cards inserted by JS -->
-    </div>
-  </section>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="#projects">Featured Projects</a>
+        <a href="#upcoming-projects">Upcoming Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
+      <div class="cta-top">
+        <a class="btn" href="tel:+917774056745">Call</a>
+        <a class="btn ghost" href="#contact">Enquire</a>
+      </div>
+    </header>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <h2 class="section-title">What clients say</h2>
-    <p class="lead">Real buyers. Real experiences.</p>
-    <div class="testi-grid">
-      <div class="testi">
-        <div class="quote">"RG Lifespaces made the entire process effortless. On-time delivery and exceptional quality."</div>
-        <div class="who">— Akshay Chavan, Buyer</div>
-      </div>
-      <div class="testi">
-        <div class="quote">"Professional team, transparent pricing. Highly recommended."</div>
-        <div class="who">— Prince Malbari., Homeowner</div>
-      </div>
-      <div class="testi">
-        <div class="quote">"Beautiful finishes and great location — excellent value."</div>
-        <div class="who">— Vijay S, Home Owner</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 class="section-title">Contact &amp; Office</h2>
-    <p class="lead">Have questions or want a site visit? Reach out — phone, WhatsApp or the form below.</p>
-    <div class="contact-wrap">
-      <div class="contact-card">
-        <form id="contactForm" action="https://formsubmit.co/rglifespaces@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New enquiry — RG Lifespaces website">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <div style="display:flex;gap:8px">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="text" name="phone" placeholder="Phone" required>
-          </div>
-          <input type="email" name="email" placeholder="Email" style="margin-top:8px">
-          <textarea name="message" placeholder="Message (optional)" rows="5" style="margin-top:8px"></textarea>
-          <div style="display:flex;gap:8px;margin-top:10px">
-            <button class="btn" type="submit">Send Message</button>
-            <a class="btn ghost" href="https://wa.me/917774056745" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-          <div id="contact-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
-        </form>
-      </div>
-      <div class="contact-card" aria-hidden="false">
-        <h4 style="margin:0">Office</h4>
-        <div class="small" style="margin-top:8px">RG Lifespaces, Pune</div>
-        <div style="margin-top:12px">
-          <iframe width="100%" height="220" frameborder="0" style="border:0;border-radius:8px"
-            src="https://www.google.com/maps?q=Khed,+Pune,+Maharashtra&output=embed"
-            allowfullscreen="" loading="lazy" aria-hidden="false" tabindex="0"></iframe>
-          <div style="margin-top:8px">
-            <a class="small" href="https://maps.app.goo.gl/QF6LQ5L5m85XdRPp6" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none">Open exact location in Google Maps →</a>
+    <section class="hero" aria-label="Featured residential properties">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h2>Crafting elegant living spaces for families who value design and trust.</h2>
+          <p>Explore selected residential projects, compare options, and request a site visit with RG Lifespaces.</p>
+          <div class="hero-actions">
+            <a class="btn gold" href="#projects">View Featured Projects</a>
+            <a class="btn ghost" href="#upcoming-projects">Explore Upcoming Launches</a>
           </div>
         </div>
-        <div style="margin-top:12px;display:flex;gap:10px">
-          <a class="btn" href="tel:+917774056745">Call</a>
-          <a class="btn ghost" href="mailto:rglifespaces@gmail.com">Email</a>
+
+        <aside class="hero-card" aria-label="Quick contact">
+          <h3>Request a Callback</h3>
+          <div class="small">Share your details and our team will contact you.</div>
+          <form id="hero-contact" class="form-stack">
+            <input class="field" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            <input class="field" name="phone" type="tel" placeholder="Phone number" autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s()]{8,20}" required>
+            <input type="hidden" name="lead_source" value="Website quick contact">
+            <button class="btn gold" type="submit">Request Call</button>
+            <div id="hero-msg" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="lead">Explore selected residential projects and request details, brochures, or a site visit.</p>
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <!-- UPCOMING PROJECTS: Add new launch entries to UPCOMING_PROJECTS in the script below. -->
+    <section id="upcoming-projects">
+      <h2 class="section-title">Upcoming Projects</h2>
+      <p class="lead">Be among the first to hear about upcoming launches, new inventory, floor plans, and launch updates.</p>
+      <div class="grid" id="upcomingProjectGrid"></div>
+      <div class="section-note">Interested in an upcoming launch? Select <strong>Register Interest</strong> on a project card. Use verified developer details and approved launch information before publishing.</div>
+    </section>
+
+    <section id="testimonials">
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="lead">Client feedback helps buyers understand the service experience.</p>
+      <!-- Publish only genuine, permission-approved customer testimonials. -->
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="quote">“The team helped me understand the available options and guided me through the process.”</div>
+          <div class="who">— Client testimonial</div>
+        </div>
+        <div class="testi">
+          <div class="quote">“The property information and follow-up made comparing homes easier.”</div>
+          <div class="who">— Client testimonial</div>
+        </div>
+        <div class="testi">
+          <div class="quote">“Professional communication and helpful assistance during our property search.”</div>
+          <div class="who">— Client testimonial</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    © RG Lifespaces — Elegant homes, trustworthy service.
-  </footer>
-</div>
-
-<!-- Floating WhatsApp -->
-<a class="wa-float" href="https://wa.me/917774056745" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.15l-.3-.18-3.1.82.83-3-.2-.32A8.2 8.2 0 1112 20.2zm4.5-6.1c-.24-.12-1.44-.7-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
-</a>
-
-<!-- Modal root (injected dynamically) -->
-<div id="modalRoot" aria-hidden="true"></div>
-
-<!-- Single-file JS -->
-<script>
-/* -------------------------
-   Project data (edit later)
-   Replace image & brochure paths with your own files in assets/
-------------------------- */
-const PROJECTS = [
-  {
-    id: 1, title: "Godrej EverGreen Square", location: "Hinjawadi PH3", tag: "Ongoing",
-    desc: "Luxurious 2 & 3 BHK apartments with landscaped gardens and world-class amenities.",
-    images: [
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1598300101797-12f2f3c1b6b9?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Clubhouse", "Jogging Track", "Children's Play Area", "24/7 Security"],
-    possession: "Dec 2030"
-  },
-  {
-    id: 2, title: "Gera's Joy on The Treetops — Phase 1", location: "Mountain View, Hinjawadi Ph3", tag: "Ongoing",
-    desc: "Modern apartments with panoramic views — crafted for serene living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "Dec 2030"
-  },
-  {
-    id: 3, title: "Kohinoor Central Park", location: "Hillside, Hinjawadi Ph2", tag: "Ongoing",
-    desc: "Premium villas with private gardens and premium fittings.",
-    images: [
-      "https://images.unsplash.com/photo-1572120360610-d971b9b4b14d?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Private Garden", "High Security"],
-    possession: "Dec 2030"
-  },
-  {
-    id: 4, title: "VTP Monarque", location: "Hinjawadi Maan", tag: "Ongoing",
-    desc: "Modern apartments for elevated everyday living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "2029"
-  },
-  {
-    id: 5, title: "VTP Never Before", location: "Mountain View", tag: "Pre-Launch",
-    desc: "Modern sky villas with panoramic views — crafted for serene living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "Launching Soon"
-  },
-  {
-    id: 6, title: "Lodha Panache", location: "Hinjawadi Ph3", tag: "Pre-Launch",
-    desc: "Modern apartments with panoramic views — crafted for serene living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "2028"
-  },
-  {
-    id: 7, title: "Gera's Joy on The Treetops — Phase 2", location: "Hinjawadi", tag: "Completed",
-    desc: "Modern apartments with panoramic views — crafted for serene living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "2029"
-  },
-  {
-    id: 8, title: "Luxton By Saheel", location: "Wakad", tag: "Pre-Launch",
-    desc: "Modern apartments with panoramic views — crafted for serene living.",
-    images: [
-      "https://images.unsplash.com/photo-1494522358652-0a5c0b1f6b6a?q=80&w=1400&auto=format&fit=crop&crop=faces",
-      "https://images.unsplash.com/photo-1505691723518-36a18a6f1c9b?q=80&w=1400&auto=format&fit=crop&crop=faces"
-    ],
-    brochure: "https://example.com/sample-brochure.pdf",
-    amenities: ["Sky Lounge", "Gym", "Private Parking"],
-    possession: "2030"
-  },
-];
-
-const LEADS_ENDPOINT = "https://formsubmit.co/ajax/rglifespaces@gmail.com";
-
-/* Utility: create an element with optional classes */
-function $el(tag, cls){ const e = document.createElement(tag); if(cls) e.className = cls; return e; }
-
-/* Send a lead via AJAX to formsubmit.co without leaving the page */
-async function sendLead(payload, msgEl, successText){
-  try{
-    const res = await fetch(LEADS_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    if(res.ok){
-      if(msgEl) msgEl.textContent = successText;
-      return true;
-    }
-    throw new Error("Non-OK response");
-  }catch(err){
-    if(msgEl) msgEl.textContent = "Could not send automatically — please call or WhatsApp us directly.";
-    return false;
-  }
-}
-
-/* Render project cards */
-const projectGrid = document.getElementById('projectGrid');
-function renderProjects(){
-  projectGrid.innerHTML = '';
-  PROJECTS.forEach(p=>{
-    const card = $el('div','proj');
-    const thumb = $el('div','thumb');
-    thumb.style.backgroundImage = `url('${p.images[0]}')`;
-    card.appendChild(thumb);
-
-    const body = $el('div','pbody');
-    const meta = $el('div','meta');
-    const title = $el('div','title'); title.textContent = p.title;
-    const tag = $el('div','tag'); tag.textContent = p.tag;
-    meta.appendChild(title); meta.appendChild(tag);
-
-    const locLine = $el('div','small'); locLine.style.color = 'var(--muted)'; locLine.style.marginTop='4px'; locLine.textContent = p.location;
-    const desc = $el('div','desc'); desc.textContent = p.desc;
-    const possessionLine = $el('div','possession-line'); possessionLine.textContent = `Possession: ${p.possession}`;
-
-    const foot = $el('div','pfoot');
-    const viewBtn = $el('button','btn'); viewBtn.textContent = 'View';
-    viewBtn.addEventListener('click', ()=> openProjectModal(p.id));
-    const regBtn = $el('button','btn ghost'); regBtn.textContent = 'Register';
-    regBtn.addEventListener('click', ()=> openRegisterModal(p.id));
-    const brochureA = $el('a'); brochureA.className='btn ghost';
-    brochureA.style.textDecoration='none'; brochureA.textContent='Brochure';
-    brochureA.href = p.brochure;
-    brochureA.target = '_blank'; brochureA.rel = 'noopener noreferrer';
-    foot.appendChild(viewBtn); foot.appendChild(regBtn); foot.appendChild(brochureA);
-
-    body.appendChild(meta); body.appendChild(locLine); body.appendChild(desc); body.appendChild(possessionLine); body.appendChild(foot);
-    card.appendChild(body);
-    projectGrid.appendChild(card);
-  });
-}
-
-/* Modal creation */
-const modalRoot = document.getElementById('modalRoot');
-function showModal(innerHtml){
-  modalRoot.setAttribute('aria-hidden','false');
-  modalRoot.innerHTML = '';
-  const backdrop = $el('div','modal-backdrop');
-  backdrop.innerHTML = innerHtml;
-  modalRoot.appendChild(backdrop);
-  backdrop.addEventListener('click', (ev)=>{ if(ev.target === backdrop) closeModal(); });
-  document.addEventListener('keydown', escClose);
-}
-function closeModal(){
-  modalRoot.innerHTML = '';
-  modalRoot.setAttribute('aria-hidden','true');
-  document.removeEventListener('keydown', escClose);
-}
-function escClose(e){ if(e.key === 'Escape') closeModal(); }
-
-/* Open project modal (gallery + details + enquiry) */
-function openProjectModal(id){
-  const p = PROJECTS.find(x=>x.id===id);
-  if(!p) return;
-  const big = p.images[0] || '';
-  const thumbsHtml = p.images.map((src,idx)=>`<img src="${src}" data-index="${idx}" alt="thumb-${idx}" loading="lazy">`).join('');
-  const html = `
-    <div class="modal" role="dialog" aria-modal="true" aria-label="${p.title}">
-      <button class="close-x" onclick="closeModal()" aria-label="Close">✕</button>
-      <div class="modal-left">
-        <div class="big" id="modalBig" style="background-image:url('${big}')"></div>
-        <div class="thumbs" id="modalThumbs">${thumbsHtml}</div>
-      </div>
-      <div class="modal-right">
-        <h3>${p.title}</h3>
-        <div class="small">${p.location} • ${p.possession}</div>
-        <p style="margin-top:8px;color:var(--muted)">${p.desc}</p>
-        <div style="margin-top:6px">
-          <strong>Amenities</strong>
-          <div class="amenities">${p.amenities.map(a=>`<div class="a">${a}</div>`).join('')}</div>
-        </div>
-        <div class="modal-actions">
-          <a class="btn" href="${p.brochure}" target="_blank" rel="noopener noreferrer">Download Brochure (PDF)</a>
-          <button class="btn ghost" onclick="openRegisterModal(${p.id})">Enquire</button>
-        </div>
-        <div style="margin-top:12px">
-          <strong>Request a callback</strong>
-          <form id="modal-enquiry" style="margin-top:8px">
-            <input name="name" type="text" placeholder="Your name" required>
-            <input name="phone" type="text" placeholder="Phone" required style="margin-top:8px">
-            <input name="email" type="email" placeholder="Email (optional)" style="margin-top:8px">
-            <textarea name="message" rows="3" placeholder="Message (optional)" style="margin-top:8px"></textarea>
-            <div style="display:flex;gap:8px;margin-top:8px">
-              <button class="btn" type="submit">Send Enquiry</button>
-              <button class="btn ghost" type="button" onclick="closeModal()">Close</button>
+    <section id="contact">
+      <h2 class="section-title">Contact &amp; Office</h2>
+      <p class="lead">Have questions or want to schedule a site visit? Contact RG Lifespaces by phone, WhatsApp, or the enquiry form.</p>
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <form id="contactForm" class="form-stack">
+            <div class="form-row">
+              <input class="field" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+              <input class="field" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s()]{8,20}" required>
             </div>
-            <div id="modal-enq-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
+            <input class="field" type="email" name="email" placeholder="Email address (optional)" autocomplete="email">
+            <textarea class="field" name="message" placeholder="Which project are you interested in? (optional)" rows="5"></textarea>
+            <input type="hidden" name="lead_source" value="Website contact form">
+            <div class="form-row">
+              <button class="btn gold" type="submit">Send Enquiry</button>
+              <a class="btn ghost" href="https://wa.me/917774056745" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+            <div id="contact-msg" class="form-status" role="status" aria-live="polite"></div>
           </form>
         </div>
-      </div>
-    </div>
-  `;
-  showModal(html);
 
-  const thumbs = modalRoot.querySelectorAll('.thumbs img');
-  const modalBig = modalRoot.querySelector('#modalBig');
-  thumbs.forEach(img=>{
-    img.addEventListener('click', ()=> {
-      modalBig.style.backgroundImage = `url('${img.src}')`;
-      thumbs.forEach(t=>t.classList.remove('active'));
-      img.classList.add('active');
-    });
-  });
-  if(thumbs[0]) thumbs[0].classList.add('active');
-
-  const modalForm = modalRoot.querySelector('#modal-enquiry');
-  modalForm.addEventListener('submit', async function(ev){
-    ev.preventDefault();
-    const fd = new FormData(modalForm);
-    const msgEl = modalRoot.querySelector('#modal-enq-msg');
-    const ok = await sendLead({
-      name: fd.get('name'), phone: fd.get('phone'), email: fd.get('email'), message: fd.get('message'),
-      project: p.title, _subject: `New enquiry — ${p.title}`
-    }, msgEl, 'Thanks — we received your enquiry. We will contact you shortly.');
-    if(ok){ modalForm.reset(); setTimeout(()=>{ closeModal(); }, 1600); }
-  });
-}
-
-/* Register modal (simple form) */
-function openRegisterModal(id){
-  const p = PROJECTS.find(x=>x.id===id);
-  const html = `
-    <div class="modal" role="dialog" aria-modal="true" aria-label="Register Interest">
-      <button class="close-x" onclick="closeModal()" aria-label="Close">✕</button>
-      <div style="padding:20px;max-height:80vh;overflow:auto;width:100%">
-        <h3>Register interest — ${p ? p.title : ''}</h3>
-        <p class="small">${p ? p.location : ''}</p>
-        <form id="reg-form" style="margin-top:12px">
-          <input name="name" type="text" placeholder="Your name" required>
-          <input name="phone" type="text" placeholder="Phone" required style="margin-top:8px">
-          <input name="email" type="email" placeholder="Email (optional)" style="margin-top:8px">
-          <textarea name="message" rows="4" placeholder="Message (optional)" style="margin-top:8px"></textarea>
-          <div style="display:flex;gap:8px;margin-top:10px">
-            <button class="btn" type="submit">Submit</button>
-            <button class="btn ghost" type="button" onclick="closeModal()">Cancel</button>
+        <div class="contact-card">
+          <h3 class="office-title">RG Lifespaces</h3>
+          <div class="small" style="margin-top:8px">Pune, Maharashtra</div>
+          <iframe class="map-frame" title="Map showing Khed, Pune" src="https://www.google.com/maps?q=Khed,+Pune,+Maharashtra&output=embed" loading="lazy" allowfullscreen></iframe>
+          <div style="margin-top:8px">
+            <a class="small" href="https://maps.app.goo.gl/3DYFZUUpaKvroeYN9" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:700;text-decoration:none">Open location in Google Maps →</a>
           </div>
-          <div id="reg-msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
-        </form>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="tel:+917774056745">Call Us</a>
+            <a class="btn ghost" href="mailto:rglifespaces@gmail.com">Email Us</a>
+          </div>
+        </div>
       </div>
-    </div>
-  `;
-  showModal(html);
-  const f = modalRoot.querySelector('#reg-form');
-  f.addEventListener('submit', async function(ev){
-    ev.preventDefault();
-    const fd = new FormData(f);
-    const msgEl = modalRoot.querySelector('#reg-msg');
-    const ok = await sendLead({
-      name: fd.get('name'), phone: fd.get('phone'), email: fd.get('email'), message: fd.get('message'),
-      project: p ? p.title : 'General', _subject: `New registration — ${p ? p.title : 'RG Lifespaces'}`
-    }, msgEl, 'Thanks — we will contact you soon.');
-    if(ok){ f.reset(); setTimeout(closeModal,1400); }
-  });
-}
+    </section>
 
-/* HERO quick contact handler — real submission via formsubmit.co AJAX */
-document.getElementById('hero-contact').addEventListener('submit', async function(ev){
-  ev.preventDefault();
-  const fd = new FormData(this);
-  const msgEl = document.getElementById('hero-msg');
-  const ok = await sendLead({
-    name: fd.get('name'), phone: fd.get('phone'), _subject: 'New Quick Contact enquiry — RG Lifespaces'
-  }, msgEl, 'Thanks — our team will call you shortly.');
-  if(ok) this.reset();
-});
+    <footer>© <span id="year"></span> RG Lifespaces — Elegant homes, trustworthy service.</footer>
+  </div>
 
-/* CONTACT form handler — real submission via formsubmit.co AJAX */
-document.getElementById('contactForm').addEventListener('submit', async function(ev){
-  ev.preventDefault();
-  const fd = new FormData(this);
-  const msgEl = document.getElementById('contact-msg');
-  const ok = await sendLead({
-    name: fd.get('name'), phone: fd.get('phone'), email: fd.get('email'), message: fd.get('message'),
-    _subject: 'New enquiry — RG Lifespaces website'
-  }, msgEl, 'Thanks — message sent. We will be in touch shortly.');
-  if(ok) this.reset();
-});
+  <a class="wa-float" href="https://wa.me/917774056745" target="_blank" rel="noopener noreferrer" aria-label="Chat with RG Lifespaces on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.82.83-3-.2-.32A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.24-.12-1.44-.7-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.28.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.5.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+  </a>
 
-/* Mobile nav toggle */
-document.getElementById('menuToggle').addEventListener('click', function(){
-  document.getElementById('mainNav').classList.toggle('open');
-});
-document.querySelectorAll('#mainNav a').forEach(a=>{
-  a.addEventListener('click', ()=> document.getElementById('mainNav').classList.remove('open'));
-});
+  <div id="modalRoot" aria-hidden="true"></div>
 
-/* Initialize */
-renderProjects();
+  <script>
+    /*
+      PROJECT MANAGEMENT
+      - Featured projects go in PROJECTS.
+      - New launches go in UPCOMING_PROJECTS.
+      - Use a unique numeric ID across BOTH arrays.
+      - Replace sample details, image URLs, and brochure URLs with verified assets.
+      - Keep brochures on a real URL; use an empty string if no brochure is available.
+    */
 
-/* Notes for you (remove in production):
-   - Replace PROJECTS images & brochure URLs with your files in assets/images & assets/pdfs
-   - formsubmit.co needs a one-time email confirmation click the first time it receives a submission —
-     check wisdomreality.in@gmail.com inbox after your first test submission and confirm it
-   - Optimize images (webp/jpg) and add alt texts for SEO
-   - To use a custom domain, configure GitHub Pages & DNS (A + CNAME as needed)
-*/
-</script>
-</body>
-</html>
+    const PROJECTS = [
+      {
+        id: 1,
+        title: "Godrej EverGreen Square",
+        location: "Hinjawadi Phase 3, Pune",
+        tag: "Ongoing",
+        desc: "Residential apartments with landscaped spaces and lifestyle amenities. Confirm current configurations and availability with the developer.",
+        images: [
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Landscaped Spaces", "Lifestyle Amenities", "Security"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 2,
+        title: "Gera's Joy on The Treetops — Phase 1",
+        location: "Hinjawadi, Pune",
+        tag: "Ongoing",
+        desc: "Residential homes in a connected Pune growth corridor. Contact us for verified configurations and availability.",
+        images: [
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Community Spaces", "Fitness Amenities", "Parking"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 3,
+        title: "Kohinoor Central Park",
+        location: "Hinjawadi, Pune",
+        tag: "Ongoing",
+        desc: "Explore residential options and request current project information from RG Lifespaces.",
+        images: [
+          "https://images.unsplash.com/photo-1572120360610-d971b9b4b14d?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Green Spaces", "Security", "Parking"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 4,
+        title: "VTP Monarque",
+        location: "Maan–Hinjawadi, Pune",
+        tag: "Ongoing",
+        desc: "Residential options in the Hinjawadi growth corridor. Ask for current availability, pricing, and specifications.",
+        images: [
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Lifestyle Amenities", "Fitness Area", "Parking"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 5,
+        title: "VTP Never Before",
+        location: "Pune",
+        tag: "Check Status",
+        desc: "Contact RG Lifespaces for verified launch status, project details, and availability.",
+        images: [
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Project Details on Request", "Location Information"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 6,
+        title: "Lodha Panache",
+        location: "Hinjawadi, Pune",
+        tag: "Check Status",
+        desc: "Contact us for current inventory, project status, specifications, and site visit details.",
+        images: [
+          "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Project Details on Request", "Site Visit Assistance"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 7,
+        title: "Gera's Joy on The Treetops — Phase 2",
+        location: "Hinjawadi, Pune",
+        tag: "Check Status",
+        desc: "Ask us to confirm phase status, current availability, and official project details.",
+        images: [
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Project Information", "Site Visit Assistance"],
+        possession: "Confirm with developer"
+      },
+      {
+        id: 8,
+        title: "Luxton By Saheel",
+        location: "Wakad, Pune",
+        tag: "Check Status",
+        desc: "Contact RG Lifespaces for confirmed project status, configurations, and current pricing.",
+        images: [
+          "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Project Information", "Location Assistance"],
+        possession: "Confirm with developer"
+      }
+    ];
+
+    /*
+      ADD NEW UPCOMING PROJECTS HERE.
+      Copy the sample object and change every field.
+      Use unique IDs not used in PROJECTS (e.g. 101, 102, 103).
+    */
+    const UPCOMING_PROJECTS = [
+      {
+        id: 101,
+        title: "Your New Project Name",
+        location: "Wakad, Pune",
+        tag: "Coming Soon",
+        desc: "Register your interest to receive verified launch updates, floor plans, pricing, and site-visit information when available.",
+        images: [
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1400&auto=format&fit=crop"
+        ],
+        brochure: "",
+        amenities: ["Launch Updates", "Floor Plans on Request", "Site Visit Updates"],
+        possession: "To Be Announced"
+      }
+    ];
+
+    const LEADS_ENDPOINT = "https://formsubmit.co/ajax/rglifespaces@gmail.com";
+    const allProjects = () => [...PROJECTS, ...UPCOMING_PROJECTS];
+
+    function $el(tag, cls) {
+      const element = document.createElement(tag);
+      if (cls) element.className = cls;
+      return element;
     }
 
+    function findProject(id) {
+      return allProjects().find(project => project.id === Number(id));
+    }
+
+    function renderProjects(projects, gridId) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      if (!projects.length) {
+        const empty = $el("p", "small");
+        empty.textContent = "New projects will be listed here soon. Contact us to register your interest.";
+        grid.appendChild(empty);
+        return;
+      }
+
+      projects.forEach(project => {
+        const card = $el("article", "proj");
+
+        const thumb = $el("div", "thumb");
+        thumb.setAttribute("role", "img");
+        thumb.setAttribute("aria-label", project.title);
+        if (project.images && project.images[0]) {
+          thumb.style.backgroundImage = `url("${project.images[0]}")`;
+        }
+        card.appendChild(thumb);
+
+        const body = $el("div", "pbody");
+        const meta = $el("div", "meta");
+        const title = $el("div", "title");
+        title.textContent = project.title;
+        const tag = $el("span", "tag");
+        tag.textContent = project.tag;
+        meta.append(title, tag);
+
+        const location = $el("div", "small");
+        location.style.marginTop = "5px";
+        location.textContent = project.location;
+
+        const desc = $el("div", "desc");
+        desc.textContent = project.desc;
+
+        const possession = $el("div", "possession-line");
+        possession.textContent = `Possession: ${project.possession}`;
+
+        const foot = $el("div", "pfoot");
+        const viewBtn = $el("button", "btn");
+        viewBtn.type = "button";
+        viewBtn.textContent = "View Details";
+        viewBtn.addEventListener("click", () => openProjectModal(project.id));
+
+        const registerBtn = $el("button", "btn ghost");
+        registerBtn.type = "button";
+        registerBtn.textContent = "Register Interest";
+        registerBtn.addEventListener("click", () => openRegisterModal(project.id));
+
+        foot.append(viewBtn, registerBtn);
+
+        if (project.brochure) {
+          const brochureLink = $el("a", "btn ghost");
+          brochureLink.textContent = "Brochure";
+          brochureLink.href = project.brochure;
+          brochureLink.target = "_blank";
+          brochureLink.rel = "noopener noreferrer";
+          foot.appendChild(brochureLink);
+        }
+
+        body.append(meta, location, desc, possession, foot);
+        card.appendChild(body);
+        grid.appendChild(card);
+      });
+    }
+
+    async function sendLead(payload, messageElement, successText) {
+      const submitButtons = messageElement
+        ? messageElement.closest("form")?.querySelectorAll('button[type="submit"]')
+        : null;
+
+      if (submitButtons) submitButtons.forEach(button => { button.disabled = true; });
+
+      if (messageElement) messageElement.textContent = "Sending your enquiry…";
+
+      try {
+        const response = await fetch(LEADS_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            ...payload,
+            _subject: payload._subject || "New website enquiry — RG Lifespaces",
+            _template: "table",
+            _captcha: "false"
+          })
+        });
+
+        let result = {};
+        try { result = await response.json(); } catch (_) {}
+
+        if (!response.ok || result.success === "false") {
+          throw new Error("Lead submission failed");
+        }
+
+        if (messageElement) messageElement.textContent = successText;
+        return true;
+      } catch (error) {
+        if (messageElement) {
+          messageElement.textContent = "We could not send the form automatically. Please call or WhatsApp us directly.";
+        }
+        return false;
+      } finally {
+        if (submitButtons) submitButtons.forEach(button => { button.disabled = false; });
+      }
+    }
+
+    const modalRoot = document.getElementById("modalRoot");
+
+    function showModal(contentBuilder) {
+      closeModal();
+      modalRoot.setAttribute("aria-hidden", "false");
+
+      const backdrop = $el("div", "modal-backdrop");
+      backdrop.addEventListener("click", event => {
+        if (event.target === backdrop) closeModal();
+      });
+
+      const modal = $el("div", "modal");
+      modal.setAttribute("role", "dialog");
+      modal.setAttribute("aria-modal", "true");
+      modal.appendChild(contentBuilder());
+      backdrop.appendChild(modal);
+      modalRoot.appendChild(backdrop);
+
+      document.addEventListener("keydown", handleModalKeydown);
+      const firstButton = modal.querySelector("button, input, textarea");
+      if (firstButton) firstButton.focus();
+    }
+
+    function handleModalKeydown(event) {
+      if (event.key === "Escape") closeModal();
+    }
+
+    function closeModal() {
+      modalRoot.innerHTML = "";
+      modalRoot.setAttribute("aria-hidden", "true");
+      document.removeEventListener("keydown", handleModalKeydown);
+    }
+
+    function makeCloseButton() {
+      const close = $el("button", "close-x");
+      close.type = "button";
+      close.textContent = "×";
+      close.setAttribute("aria-label", "Close dialog");
+      close.addEventListener("click", closeModal);
+      return close;
+    }
+
+    function makeEnquiryForm(project, formId, messageId, successText) {
+      const form = $el("form", "form-stack");
+      form.id = formId;
+
+      const name = $el("input", "field");
+      name.name = "name";
+      name.type = "text";
+      name.placeholder = "Your name";
+      name.autocomplete = "name";
+      name.required = true;
+
+      const phone = $el("input", "field");
+      phone.name = "phone";
+      phone.type = "tel";
+      phone.placeholder = "Phone number";
+      phone.autocomplete = "tel";
+      phone.inputMode = "tel";
+      phone.pattern = "[0-9+\\-\\s()]{8,20}";
+      phone.required = true;
+
+      const email = $el("input", "field");
+      email.name = "email";
+      email.type = "email";
+      email.placeholder = "Email address (optional)";
+      email.autocomplete = "email";
+
+      const message = $el("textarea", "field");
+      message.name = "message";
+      message.rows = 3;
+      message.placeholder = "Your message (optional)";
+
+      const hiddenProject = $el("input");
+      hiddenProject.type = "hidden";
+      hiddenProject.name = "project";
+      hiddenProject.value = project.title;
+
+      const hiddenSource = $el("input");
+      hiddenSource.type = "hidden";
+      hiddenSource.name = "lead_source";
+      hiddenSource.value = "Project enquiry";
+
+      const actions = $el("div", "modal-actions");
+      const submit = $el("button", "btn gold");
+      submit.type = "submit";
+      submit.textContent = "Send Enquiry";
+
+      const cancel = $el("button", "btn ghost");
+      cancel.type = "button";
+      cancel.textContent = "Cancel";
+      cancel.addEventListener("click", closeModal);
+      actions.append(submit, cancel);
+
+      const status = $el("div", "form-status");
+      status.id = messageId;
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+
+      form.append(name, phone, email, message, hiddenProject, hiddenSource, actions, status);
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+        payload._subject = `New enquiry — ${project.title}`;
+
+        const success = await sendLead(payload, status, successText);
+        if (success) {
+          form.reset();
+          window.setTimeout(closeModal, 1400);
+        }
+      });
+      return form;
+    }
+
+    function openProjectModal(id) {
+      const project = findProject(id);
+      if (!project) return;
+
+      showModal(() => {
+        const fragment = document.createDocumentFragment();
+        const close = makeCloseButton();
+
+        const left = $el("div", "modal-left");
+        const big = $el("div", "big");
+        big.setAttribute("role", "img");
+        big.setAttribute("aria-label", project.title);
+        if (project.images && project.images[0]) {
+          big.style.backgroundImage = `url("${project.images[0]}")`;
+        }
+        left.appendChild(big);
+
+        const thumbs = $el("div", "thumbs");
+        (project.images || []).forEach((src, index) => {
+          const image = document.createElement("img");
+          image.src = src;
+          image.alt = `${project.title} image ${index + 1}`;
+          image.loading = "lazy";
+          image.addEventListener("click", () => {
+            big.style.backgroundImage = `url("${src}")`;
+            thumbs.querySelectorAll("img").forEach(item => item.classList.remove("active"));
+            image.classList.add("active");
+          });
+          if (index === 0) image.classList.add("active");
+          thumbs.appendChild(image);
+        });
+        left.appendChild(thumbs);
+
+        const right = $el("div", "modal-right");
+        const heading = $el("h3");
+        heading.textContent = project.title;
+
+        const subheading = $el("div", "small");
+        subheading.textContent = `${project.location} • ${project.possession}`;
+
+        const description = $el("p");
+        description.style.color = "var(--muted)";
+        description.textContent = project.desc;
+
+        const amenitiesWrap = document.createElement("div");
+        const amenitiesHeading = document.createElement("strong");
+        amenitiesHeading.textContent = "Project Highlights";
+        const amenities = $el("div", "amenities");
+        (project.amenities || []).forEach(item => {
+          const chip = $el("div", "a");
+          chip.textContent = item;
+          amenities.appendChild(chip);
+        });
+        amenitiesWrap.append(amenitiesHeading, amenities);
+
+        const actions = $el("div", "modal-actions");
+        if (project.brochure) {
+          const brochure = $el("a", "btn");
+          brochure.href = project.brochure;
+          brochure.target = "_blank";
+          brochure.rel = "noopener noreferrer";
+          brochure.textContent = "View Brochure";
+          actions.appendChild(brochure);
+        }
+        const register = $el("button", "btn ghost");
+        register.type = "button";
+        register.textContent = "Register Interest";
+        register.addEventListener("click", () => openRegisterModal(project.id));
+        actions.appendChild(register);
+
+        const formHeading = document.createElement("strong");
+        formHeading.textContent = "Request Details or a Callback";
+        right.append(heading, subheading, description, amenitiesWrap, actions, formHeading);
+        right.appendChild(makeEnquiryForm(project, "modal-enquiry", "modal-enq-msg", "Thank you — your enquiry has been submitted."));
+
+        fragment.append(close, left, right);
+        return fragment;
+      });
+    }
+
+    function openRegisterModal(id) {
+      const project = findProject(id);
+      if (!project) return;
+
+      showModal(() => {
+        const content = document.createElement("div");
+        content.style.cssText = "padding:24px;width:100%;overflow:auto;";
+
+        const close = makeCloseButton();
+        const heading = $el("h3");
+        heading.style.cssText = "font-family:'Playfair Display',serif;margin:0 40px 6px 0;font-size:25px;";
+        heading.textContent = "Register Interest";
+
+        const projectTitle = $el("p", "small");
+        projectTitle.textContent = `${project.title} — ${project.location}`;
+
+        const intro = $el("p", "small");
+        intro.textContent = "Submit your details to request project information and launch updates.";
+
+        content.append(close, heading, projectTitle, intro);
+        content.appendChild(makeEnquiryForm(project, "reg-form", "reg-msg", "Thank you — your interest has been registered."));
+        return content;
+      });
+    }
+
+    function bindSimpleForm(formId, messageId, source, subject, successText) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+        payload.lead_source = source;
+        payload._subject = subject;
+
+        const status = document.getElementById(messageId);
+        const success = await sendLead(payload, status, successText);
+        if (success) form.reset();
+      });
+    }
+
+    bindSimpleForm(
+      "hero-contact",
+      "hero-msg",
+      "Website quick contact",
+      "New Quick Contact enquiry — RG Lifespaces",
+      "Thank you — your callback request has been submitted."
+    );
+
+    bindSimpleForm(
+      "contactForm",
+      "contact-msg",
+      "Website contact form",
+      "New enquiry — RG Lifespaces website",
+      "Thank you — your enquiry has been submitted."
+    );
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProjects(PROJECTS, "projectGrid");
+    renderProjects(UPCOMING_PROJECTS, "upcomingProjectGrid");
+  </script>
+</body>
+</html>
